@@ -1,0 +1,829 @@
+1A:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>college</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="header" style="background-color: black; color: wheat;" >
+        <center><h1>I2IT</h1></center>
+    </div>
+    
+    <!-- The sidebar -->
+    <div class="sidebar">
+    <a class="active" href="#home">Home</a>
+    <a href="teacher.html">Dashboard</a>
+    <a href="teacher.html">teacher</a>
+    <a href="student.html">student</a>
+    <a href="activity.html">activity</a>
+  </div>
+  
+  <div class="card" style="width:400px; position: absolute; top: 60px; right: 20px; " >
+    <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+    <div class="card-body">
+      <h4 class="card-title">John Doe</h4>
+      <p class="card-text">Some example text.</p>
+      <a href="#" class="btn btn-primary">See Profile</a>
+    </div>
+  </div>
+  
+  <!-- Page content -->
+  <div class="content">
+    <div class="container">
+        
+        <table class="table table-hover" style="position: absolute;">
+          <thead>
+            <tr>
+              <th>Firstname</th>
+              <th>Lastname</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John</td>
+              <td>Doe</td>
+              <td>john@example.com</td>
+            </tr>
+            <tr>
+              <td>Mary</td>
+              <td>Moe</td>
+              <td>mary@example.com</td>
+            </tr>
+            <tr>
+              <td>July</td>
+              <td>Dooley</td>
+              <td>july@example.com</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+  </div>
+
+</body>
+</html>
+
+CSS:
+/* The side navigation menu */
+.sidebar {
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+  
+  /* Active/current link */
+  .sidebar a.active {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Links on mouse-over */
+  .sidebar a:hover:not(.active) {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+  div.content {
+    margin-left: 200px;
+    padding: 1px 16px;
+    height: 1000px;
+  }
+  
+  /* On screens that are less than 700px wide, make the sidebar into a topbar */
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    .sidebar a {float: left;}
+    div.content {margin-left: 0;}
+  }
+  
+  /* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+  @media screen and (max-width: 400px) {
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+  }
+******************************************************************************************************************************
+1B:
+REGISTER:::::::::::
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mrinmayi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="card">
+            <center>
+            <h2>Registration form</h2>
+
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">Name:</label><br><br>
+                        <input type="text" class="form-group" id="name" name="name" placeholder="enter full name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">email:</label><br><br>
+                        <input type="email" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">password:</label><br><br>
+                        <input type="password" id="password">
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" onclick="saveData()" class="btn btn-primary" >Submit</button>
+                        <button type="reset"  class="btn btn-warning" >reset</button>
+
+                    </div>
+                </form>
+            </center>
+        
+        
+        </div>
+    </div>
+</body>
+
+<script>
+    function saveData(){
+        let name, email,password;
+        name=document.getElementById('name').value;
+        email=document.getElementById('email').value;
+        password=document.getElementById('password').value;
+
+       // localStorage.setItem('name',name);
+        //localStorage.setItem('email',email);
+        //localStorage.setItem('password',password);
+
+        let user_records=new Array();
+        user_records=JSON.parse(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[]
+        if(user_records.some((v)=>{
+            return v.email==email
+        })){
+            alert('duplicate data');
+        }
+        else{
+            user_records.push({
+                'name':name,
+                'email':email,
+                'password':password
+            })
+            localStorage.setItem('users',JSON.stringify(user_records));
+        }
+
+    }
+</script>
+</html>
+
+
+
+
+
+LOGIN::::::::
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h3>Login Page</h3>
+            <div class="form-group">
+                <label for="email">email:</label>
+                <input type="email" id="email" placeholder="enter your username">
+            </div>
+            <div class="form-group">
+                <label for="password">password:</label>
+                <input type="password" id="password" placeholder="enter your password">
+            </div>
+            <div class="form-group">
+                <button type="button" onclick="saveData()" class="btn btn-primary" >Login</button>
+                <button type="reset"  class="btn btn-warning" >reset</button>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+<script>
+    function saveData(){
+    let email,password;
+    email=document.getElementById('email').value;
+    password=document.getElementById('password').value;
+
+    let user_record=new Array();
+    user_record=JSON.parse(localStorage.getItem('users'))?JSON.parse(localStorage.getItem('users')):[]
+    if(user_record.some((v)=>{
+        return v.email==email && v.password==password
+    })){
+        alert('login successful')
+        
+        //new
+        let current_user=user_record.filter((v)=>{
+            return v.email==email && v.password==password
+        })[0]
+
+        localStorage.setItem('name',current_user.name);
+        localStorage.setItem('email',current_user.email);
+        window.location.href='profile.html';
+    }
+    else{
+        alert('login failed')
+    }
+}
+</script>
+
+
+
+
+
+</html>
+
+
+
+
+
+PROFILE:::::::::::
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h3>Profile Page</h3>    
+            <button onclick="logout()" style="float: right;">log out</button>
+
+
+            <h3>Welcome</h3>
+            <h4>Name:
+                <script>
+                    document.write(localStorage.getItem('name'));
+                </script>
+            </h4>
+            <h4>Your email is:
+                <script>
+                    document.write(localStorage.getItem('email'));
+                </script>
+            </h4>
+
+        </div>
+    </div>
+  
+</body>
+<script>
+    function logout(){
+        localStorage.removeItem('name');
+        localStorage.removeItem('email');
+        window.location.herf='login.html'
+    }
+</script>
+</html>
+
+
+
+
+
+*********************************************************************************************************************************************************8
+2b
+docker -v
+docker images
+docker ps
+docker pull openjdk
+docker image
+docker images
+docker run --name JAVA -it -d openjdk
+docker ps
+docker exec -it JAVA jshell
+system.out.println("hello world");
+int a=10
+int b=10
+System.out.println(a+b);
+/exit
+docker ps
+docker container rm id
+docker stop id
+*********************************************************************************************************************************************************************
+2C:
+
+app.component.ts::::::
+
+import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css'
+})
+export class AppComponent {
+  title = 'Registration Form';
+  displayname=""
+  displayaddress=""
+  displaycontact=""
+  displayemail=""
+  getValue(name:string,address:string,contact:string,email:string){
+    this.displayname=name;
+    this.displayaddress=address;
+    this.displaycontact=contact;
+    this.displayemail=email;
+  }
+}
+
+
+
+app.component.html:::::::
+<h1>{{title}}</h1>
+<input type="text" #name placeholder="Enter Your Name:" name="Name"><br>
+<input type="text" #address placeholder="Enter Your Address:" name="Address"><br>
+<input type="text" #contact placeholder="Enter Your Contact No:" name="Contact"><br>
+<input type="email" #email placeholder="Enter Your Email:" name="Email"><br>
+<input type="password" #password placeholder="Enter Your Password:" name="Password"><br>
+<button (click)="getValue(name.value,address.value,contact.value,email.value)">Register</button>
+<h1>Your Registered Data</h1><br>
+<p>Name:{{displayname}}</p>
+<p>Address:{{displayaddress}}</p>
+<p>Contact:{{displaycontact}}</p>
+<p>Email:{{displayemail}}</p>
+
+
+
+app.component.css:::::::::
+input{
+    width: 400px;
+    margin: 10px;
+    padding: 5px;
+    height: 25px;
+}
+button{
+    margin-left: 150px;
+    margin-top: 20px;
+    height: 20px;
+    width: 100px;
+}
+
+
+cmmds::::::
+npm --version
+npm install -g @angular/cli@latest
+ng new Mock
+ng serve(to run)
+
+
+
+
+
+
+
+************************************************************************************************************************************
+3a
+1)npm init
+2)npm install express --save
+3)node index.js
+
+
+//steps
+1)Create the public folder inside 3A folder
+2)inside it create index.html and index.css
+3)create index.js inside 3A folder and make changes in it
+
+const express=require("express")//importing express
+const app=express();//calling express function
+app.use(express.static("public"))
+app.listen(4000,()=>{
+    console.log("Server is Started!!")
+})
+
+4)for running the project on desired port number go to browser and type localhost:4000
+
+**********************************************************************************************************************
+3b
+npm install express
+npm install mongodb
+node index.js
+
+index.js
+const express = require('express');
+
+const {getDb , connectDatabase} = require('./mongodb.js');
+
+const app = express();
+
+app.use(express.json())
+
+app.get('/', (req,res)=>{
+    res.send("Hello World");
+})
+
+app.get('/users', async(req,res)=>{
+    const db = await getDb();
+    const users = await db.collection('users').find().toArray();
+    res.send(users);
+})
+
+app.post('/users', async(req,res)=>{
+    const body = req.body;
+    const db = await getDb();
+    const result = await db.collection('users').insertOne(body);
+    res.send(result);
+})
+
+app.delete('/users/:name', async(req,res)=>{
+    const name =  req.params.name
+
+    const db = await getDb();
+    const result = await db.collection('users').deleteOne({name});
+    res.send(result);
+})
+
+app.patch('/users/:name', async(req,res)=>{
+    const name =  req.params.name
+    const body = req.body;
+    const db = await getDb();
+    const result = await db.collection('users').updateOne({name},{$set:body});
+    res.send(result);
+})
+
+
+connectDatabase()
+   .then(()=>{
+    app.listen(4000,()=>{
+        console.log("Server is started");
+    })
+    })
+    .catch(()=>{
+        console.log("Server is not started");
+    })
+
+
+mongodb.js
+const {MongoClient} = require('mongodb');
+const Client = new MongoClient('mongodb+srv://mrinmayihankare:mrinmayi@cluster0.arkfspw.mongodb.net/');
+
+
+let database;
+async function connectDatabase(){
+    try{
+        await Client.connect();
+        database = Client.db("wad")
+    }
+    catch(err){
+        console.log("Connection Unsuccessful..!");
+    }
+   
+}
+
+async function getDb(){
+    if(!database){
+        console.log("Database not get");
+    }
+    return database;
+}
+
+module.exports = {connectDatabase,getDb};
+
+mongodb atlas key generation
+
+******************************************************************************************************************************************
+4A:
+
+INDEX
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrinmayi's Page</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+
+    <div data-role="Page">
+        <div data-role="header" data theam="b">
+            <h1><center>Great SUMMER SALE Live</center></h1>
+        </div>
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="index.html" class="ui-btn-active">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="login_register.html">Login/Register</a></li>
+            </ul>
+        
+        </div><!-- /navbar -->
+
+        <img src="home.jfif" height="700px" width="1400px">
+        
+
+
+        
+        <div data-role="footer">
+            <center>
+                <div id="quicklinks">
+                    <h3>Quick Links</h3><br><br>
+                    <a href="index.html">Home</a><br><br>
+                    <a href="about_us.html">About Us</a><br><br>
+                    <a href="products.html">Products</a><br><br>
+                    <a href="login_register.html">Login/Register</a><br><br>
+
+                </div>
+                <p>Copyright 2024 | Mrinmayi Collection, All Rights Reserved</p>
+            </center>
+
+        </div>
+
+    </div>
+</body>
+</html>
+____________________________________________________________________________________________________________
+ABOUT US
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="about_us.html" class="ui-button-active">About Us</a></li>
+                <li><a href="products.html" >Products</a></li>
+                <li><a href="login_register.html" >Login/Register</a></li>
+            </ul>
+
+        </div>
+
+
+        <center>
+
+        </center>
+
+        <div data-role="footer" data-theam="b">
+            <center>
+            <h3> Quick Links </h3><br><br>
+            <a href="index.html">Home</a><br><br>
+            <a href="about_us.html">About Us</a><br><br>
+            <a href="products.html">Products</a><br><br>
+            <a href="login_register.html">Login/Register</a><br><br>
+            </center>
+        </div>
+    </div>
+</body>
+</html>
+______________________________________________________________________________________________________________________
+LOGIN/REGISTER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="about_us.html" >About Us</a></li>
+                <li><a href="products.html" >Products</a></li>
+                <li><a href="login_register.html" class="ui-button-active" >Login/Register</a></li>
+            </ul>
+
+        </div>
+
+        <div class="content">
+            <div>
+                <center><h2>Register</h2></center>
+            </div>
+        
+
+            <div data-role="content">
+
+                <label>Full Name:</label>
+                <input type="text"><br>
+
+                <label>Address:</label>
+                <textarea cols="30" rows="10"></textarea><br>
+
+                <label>Pincode:</label>
+                <input type="text"><br>
+
+                <label>Contact:</label>
+                <input type="number"><br>
+
+                <label>Date of Birth:</label>
+                <input type="date"><br>
+
+                <label>Email:</label>
+                <input type="email"><br>
+
+                <label">Password</label>
+                <input type="password"><br>
+
+                <label>Confirm Password</label>
+                <input type="password"><br>
+
+
+                <input type="submit" value="Register"><br>
+
+                <center><a href="login.html">Already Registered? Login</a></center>
+
+            </div>
+        </div>
+        <div data-role="footer" data-theam="b">
+            <center>
+            <h3>Quick Links </h3><br><br>
+            <a href="index.html">Home</a><br><br>
+            <a href="about_us.html">About Us</a><br><br>
+            <a href="products.html">Products</a><br><br>
+            <a href="login_register.html">Login/Register</a><br><br>
+            </center>
+        </div>
+    </div>
+</body>
+</html>
+_______________________________________________________________________________________________________________
+LOGIN
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <center><h1>LOGIN</h1></center>
+    <label>Username:</label>
+    <input type="text"><br>
+
+    <label>Password</label>
+    <input type="password">
+
+    <div data-role="footer">
+        <center>
+            <div id="quicklinks">
+                <h3>Quick Links</h3><br><br>
+                <a href="index.html">Home</a><br><br>
+                <a href="about_us.html">About Us</a><br><br>
+                <a href="products.html">Products</a><br><br>
+                <a href="login_register.html">Login/Register</a><br><br>
+
+            </div>
+            <p>Copyright 2024 | Mrinmayi Collection, All Rights Reserved</p>
+        </center>
+</body>
+</html>
+____________________________________________________________________________________________________________________________________
+PRODUCTS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+    <div data-role="page">
+
+        <div data-role="navbar" data-grid="c">
+            <ul>
+                <li><a href="index.html" >Home</a></li>
+                <li><a href="about_us.html" >About Us</a></li>
+                <li><a href="products.html" class="ui-button-active">Products</a></li>
+                <li><a href="login_register.html" >Login/Register</a></li>
+            </ul>
+
+        </div>
+
+        <center><h1>Exclusive Summer Collection</h1></center>
+        <center>
+            <div class="rows" style="display: flex; justify-content: center;">
+                <div class="image">
+                    <img src="1.jfif" height="350px" width="350px">
+                    <h5>Floral dress</h5>
+                    <h4>799/-</h4>
+                </div>
+                <div class="image">
+                    <img src="2.jfif" height="350px" width="350px">
+                    <h5>cute mini dress</h5>
+                    <h4>999/-</h4>
+                </div>
+                <div class="image">
+                    <img src="3.jfif" height="350px" width="350px">
+                    <h5>Mini Floral dress</h5>
+                    <h4>599/-</h4>
+                </div>
+            </div>
+            <br>
+            <div class="rows" style="display: flex; justify-content: center;">
+                <div class="image">
+                    <img src="1.jfif" height="350px" width="350px">
+                    <h5>Floral dress</h5>
+                    <h4>799/-</h4>
+                </div>
+                <div class="image">
+                    <img src="2.jfif" height="350px" width="350px">
+                    <h5>cute mini dress</h5>
+                    <h4>999/-</h4>
+                </div>
+                <div class="image">
+                    <img src="3.jfif" height="350px" width="350px">
+                    <h5>Mini Floral dress</h5>
+                    <h4>599/-</h4>
+                </div>
+            </div>
+            <br>
+            <div class="rows" style="display: flex; justify-content: center;">
+                <div class="image">
+                    <img src="1.jfif" height="350px" width="350px">
+                    <h5>Floral dress</h5>
+                    <h4>799/-</h4>
+                </div>
+                <div class="image">
+                    <img src="2.jfif" height="350px" width="350px">
+                    <h5>cute mini dress</h5>
+                    <h4>999/-</h4>
+                </div>
+                <div class="image">
+                    <img src="3.jfif" height="350px" width="350px">
+                    <h5>Mini Floral dress</h5>
+                    <h4>599/-</h4>
+                </div>
+            </div>
+        </center>
+        
+
+        <div data-role="footer" data-theam="b">
+            <center>
+            <h3>Quick Links </h3><br><br>
+            <a href="index.html">Home</a><br><br>
+            <a href="about_us.html">About Us</a><br><br>
+            <a href="products.html">Products</a><br><br>
+            <a href="login_register.html">Login/Register</a><br><br>
+            </center>
+        </div>
+    </div>
+</body>
+</html>
+
